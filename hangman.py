@@ -42,20 +42,19 @@ while(not endGame):
 			guesses.append(choice)
 			
 	
-	if choice in visibleWord:
-		continue
-	elif choice in game_word:
+	if choice in game_word:
 		correct_guesses += 1
 		visibleWord[game_word.index(choice)] = choice
 		print visibleWord
 	
-	if numGuesses == numChanches:
-		print "You ran out of guesses! You Lose!"
-		print "The word was: " + word
-		endGame = True
-	elif correct_guesses == word_length:
+	if correct_guesses == word_length:
 		print "Congratulations! You've won!"
 		print "{} {}".format("Number of guesses: ", numGuesses)
 		endGame = True
+	elif numGuesses == numChanches:
+		print "You ran out of guesses! You Lose!"
+		print "The word was: " + word
+		endGame = True
+	
 	
 		
